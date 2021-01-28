@@ -15,6 +15,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * @create: 2021-01-28 22:05
  */
 public class NettyProtocol implements Protocol {
+
     @Override
     public void send(String url) {
 

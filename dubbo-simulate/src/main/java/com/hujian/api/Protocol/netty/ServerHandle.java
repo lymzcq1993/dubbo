@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * @author: hujian
  * @create: 2021-01-28 22:32
  */
-public class MyNettyHandle extends SimpleChannelInboundHandler<Invocation> {
+public class ServerHandle extends SimpleChannelInboundHandler<Invocation> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Invocation invocation) throws Exception {
         Class clazz = Class.forName(invocation.getInterfaceName());

@@ -1,4 +1,4 @@
-package com.hujian.api.Protocol.netty;
+package com.hujian.api.Protocol.netty.server;
 
 import com.hujian.api.Invocation;
 import com.hujian.interfaces.HelloServiceImpl;

@@ -1,6 +1,8 @@
 package com.hujian.api.Protocol.netty;
 
+import com.hujian.api.Invocation;
 import com.hujian.api.Protocol.Protocol;
+import com.hujian.api.Protocol.netty.client.NettyClient;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -16,11 +18,15 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class NettyProtocol implements Protocol {
 
-    @Override
-    public void send(String url) {
 
+    @Override
+    public void send(String host, int port, Invocation invocation) {
+        new NettyClient().send(host,port,invocation);
     }
 
+    /**
+     * 启动netty
+     */
     @Override
     public void start() {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);

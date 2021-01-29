@@ -1,11 +1,10 @@
-package com.hujian.api.Protocol.netty;
+package com.hujian.api.Protocol.netty.client;
 
 import com.hujian.api.Invocation;
-import com.hujian.interfaces.HelloServiceImpl;
+import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-import java.lang.reflect.Method;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -23,7 +22,7 @@ public class ClientHandle extends SimpleChannelInboundHandler<String> {
         countDownLatch.countDown();
     }
 
-    public String getResult(){
+    public String getResult(Invocation invocation, Bootstrap bootstrap){
         try {
             countDownLatch.wait();
 

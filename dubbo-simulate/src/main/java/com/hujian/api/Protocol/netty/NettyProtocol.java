@@ -18,7 +18,6 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  */
 public class NettyProtocol implements Protocol {
 
-
     @Override
     public void send(String host, int port, Invocation invocation) {
         new NettyClient().send(host,port,invocation);
